@@ -1,0 +1,54 @@
+= mongoid-plugins
+
+Easily add and configure plugins for Mongoid
+
+== Requirements
+
+* mongoid (>= 2.0.0.beta.20)
+
+== Install
+
+To install mongoid-plugins, simply add it to your Gemfile:
+
+  gem 'mongoid-plugins', :require => 'mongoid/plugins'
+
+In order to get the latest development version of mongoid-plugins:
+
+  gem 'mongoid-plugins', :git => 'git://github.com/benedikt/mongoid-plugins', :require => 'mongoid/plugins'
+
+You might want to remove the <tt>:require => 'mongoid/plugins'</tt> option and explicitly <tt>require 'mongoid/plugins'</tt> where needed and finally run
+
+  bundle install
+
+
+== Usage
+
+Read the API documentation at http://benedikt.github.com/mongoid-plugins and take a look at the Mongoid::Plugins module
+
+  class Node
+    include Mongoid::Document
+
+    plugin Mongoid::Tree do |c|
+      c.parent = :parent
+      c.children = :children
+    end
+  end
+
+
+== Writing Plugins
+
+
+
+== Known issues
+
+See http://github.com/benedikt/mongoid-plugins/issues
+
+
+== Repository
+
+See http://github.com/benedikt/mongoid-plugins and feel free to fork it!
+
+
+== Copyright
+
+Copyright (c) 2010 Benedikt Deicke. See LICENSE for details.
