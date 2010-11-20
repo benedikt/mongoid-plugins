@@ -23,20 +23,36 @@ You might want to remove the <tt>:require => 'mongoid/plugins'</tt> option and e
 
 == Usage
 
-Read the API documentation at http://benedikt.github.com/mongoid-plugins and take a look at the Mongoid::Plugins module
-
-  class Node
+  class SomeDocument
     include Mongoid::Document
 
-    plugin Mongoid::Tree do |c|
-      c.parent = :parent
-      c.children = :children
+    plugin SomePlugin do |c|
+      c.some_setting = false
     end
   end
 
 
 == Writing Plugins
 
+It's fairly easy to write plugins compatible with Mongoid::Plugins. In fact they're simply Ruby modules. It's possible to add default options by defining a <tt>default_plugin_options</tt> method on your module returning a hash:
+
+  module SomePlugin
+    def self.default_plugin_options
+      {
+        :some_default_setting => 100
+      }
+    end
+  end
+
+To access the options from within your plugin just call <tt>plugin_options_for(SomePlugin)</tt>:
+
+  module SomePlugin
+    def a_plugin_method
+      if self.plugin_options_for(SomePlugin).do_something
+        # Do something :-)
+      end
+    end
+  end
 
 
 == Known issues

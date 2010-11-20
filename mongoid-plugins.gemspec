@@ -1,15 +1,12 @@
-$:.push File.expand_path("../lib", __FILE__)
-require "mongoid/plugins"
-
 Gem::Specification.new do |s|
-  s.name        = "mongoid-plugins"
-  s.version     = Mongoid::Plugins::VERSION
+  s.name        = 'mongoid-plugins'
+  s.version     = '0.0.1'
   s.platform    = Gem::Platform::RUBY
-  s.authors     = "Benedikt Deicke"
-  s.email       = "benedikt@synatic.net"
-  s.homepage    = "http://rubygems.org/gems/mongoid-plugins"
-  s.summary     = "Easily add and configure plugins for Mongoid"
-  s.description = "Easily add and configure plugins for Mongoid"
+  s.authors     = 'Benedikt Deicke'
+  s.email       = 'benedikt@synatic.net'
+  s.homepage    = 'http://rubygems.org/gems/mongoid-plugins'
+  s.summary     = 'Easily add and configure plugins for Mongoid'
+  s.description = 'Easily add and configure plugins for Mongoid'
 
   s.has_rdoc      = true
   s.rdoc_options  = ['--main', 'README.rdoc', '--charset=UTF-8']
