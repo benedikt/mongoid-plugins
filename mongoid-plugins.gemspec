@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = 'Benedikt Deicke'
   s.email       = 'benedikt@synatic.net'
-  s.homepage    = 'http://rubygems.org/gems/mongoid-plugins'
+  s.homepage    = 'http://github.com/benedikt/mongoid-plugins'
   s.summary     = 'Easily add and configure plugins for Mongoid'
   s.description = 'Easily add and configure plugins for Mongoid'
 
